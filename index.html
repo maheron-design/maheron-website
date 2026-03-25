@@ -3,24 +3,48 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="هنا_ضع_الكود_الذي_نسخته" />
 <title>ماهرون | الاستيكرات والزجاج السكريت</title>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;600&display=swap" rel="stylesheet">
 <style>
-body{margin:0;font-family:'Cairo',sans-serif;background:#0f172a;color:white}
-header{display:flex;justify-content:space-between;padding:15px 30px;background:#020617}
-header h1{color:#38bdf8}
-nav a{color:white;margin:10px;text-decoration:none}
-.hero{height:90vh;background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url('https://images.unsplash.com/photo-1524758631624-e2822e304c36');background-size:cover;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
-.hero h2{font-size:40px}
-.btn{background:#38bdf8;padding:12px 25px;border-radius:8px;margin-top:20px;text-decoration:none;color:black}
-.section{padding:60px 20px;text-align:center}
-.cards{display:flex;flex-wrap:wrap;justify-content:center}
-.card{background:#1e293b;margin:15px;padding:25px;width:260px;border-radius:12px;transition:0.3s}
-.card:hover{transform:scale(1.05)}
-.gallery img{width:250px;margin:10px;border-radius:10px}
-form input,form textarea{width:80%;padding:10px;margin:10px;border-radius:6px;border:none}
-footer{background:black;padding:20px;text-align:center}
-.whatsapp{position:fixed;bottom:20px;left:20px;background:#25D366;color:white;padding:15px;border-radius:50%;text-decoration:none;font-size:20px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Cairo',sans-serif;background:#0f172a;color:white}
+header{display:flex;justify-content:space-between;align-items:center;padding:15px 30px;background:#020617;position:sticky;top:0}
+header h1{color:#38bdf8;font-size:28px}
+nav a{color:white;margin:0 12px;text-decoration:none;font-weight:600}
+nav a:hover{color:#38bdf8}
+.hero{height:90vh;background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url('https://images.unsplash.com/photo-1524758631624-e2822e304c36');background-size:cover;background-position:center;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+.hero h2{font-size:48px;margin-bottom:20px}
+.hero p{font-size:24px;margin-bottom:30px}
+.btn{background:#38bdf8;padding:14px 35px;border-radius:50px;text-decoration:none;color:white;font-weight:700;transition:0.3s;display:inline-block}
+.btn:hover{transform:translateY(-3px);box-shadow:0 10px 25px rgba(56,189,248,0.3)}
+.section{padding:80px 20px;text-align:center}
+.section h2{font-size:36px;margin-bottom:50px;position:relative;display:inline-block}
+.section h2:after{content:'';position:absolute;bottom:-12px;left:50%;transform:translateX(-50%);width:60px;height:3px;background:#38bdf8}
+.cards{display:flex;flex-wrap:wrap;justify-content:center;gap:30px;max-width:1200px;margin:0 auto}
+.card{background:#1e293b;padding:35px 25px;width:280px;border-radius:20px;transition:0.3s;border:1px solid rgba(56,189,248,0.1)}
+.card:hover{transform:translateY(-10px);border-color:#38bdf8}
+.card h3{font-size:24px;margin-bottom:15px}
+.card p{color:#cbd5e1}
+.gallery{display:flex;flex-wrap:wrap;justify-content:center;gap:25px;max-width:1200px;margin:0 auto}
+.gallery img{width:320px;height:240px;object-fit:cover;border-radius:15px;transition:0.3s}
+.gallery img:hover{transform:scale(1.05)}
+form{max-width:600px;margin:0 auto;background:rgba(30,41,59,0.5);padding:40px;border-radius:25px}
+form input,form textarea{width:100%;padding:14px;margin:10px 0;border-radius:10px;border:1px solid rgba(56,189,248,0.3);background:#1e293b;color:white;font-family:'Cairo',sans-serif}
+form input:focus,form textarea:focus{outline:none;border-color:#38bdf8}
+form textarea{min-height:120px}
+form button{width:100%;margin-top:15px;border:none;cursor:pointer}
+footer{background:#020617;padding:30px;text-align:center;border-top:1px solid rgba(56,189,248,0.2)}
+footer p{color:#94a3b8}
+.whatsapp{position:fixed;bottom:25px;left:25px;background:#25D366;color:white;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:28px;transition:0.3s}
+.whatsapp:hover{transform:scale(1.1)}
+@media (max-width:768px){
+header{flex-direction:column;gap:15px}
+.hero h2{font-size:28px}
+.hero p{font-size:18px}
+.card{width:100%;max-width:320px}
+.gallery img{width:100%;max-width:320px}
+}
 </style>
 </head>
 <body>
@@ -56,15 +80,31 @@ footer{background:black;padding:20px;text-align:center}
 </div>
 <div class="section" id="contact">
 <h2>اطلب عرض سعر</h2>
-<form>
-<input type="text" placeholder="الاسم">
-<input type="text" placeholder="رقم الجوال">
-<textarea placeholder="تفاصيل الطلب"></textarea>
-<br>
-<button class="btn">إرسال</button>
+<form id="contactForm">
+<input type="text" id="name" placeholder="الاسم" required>
+<input type="tel" id="phone" placeholder="رقم الجوال" required>
+<textarea id="message" placeholder="تفاصيل الطلب" required></textarea>
+<button type="submit" class="btn">إرسال</button>
 </form>
 </div>
 <footer><p>© 2026 جميع الحقوق محفوظة - ماهرون</p></footer>
 <a class="whatsapp" href="https://wa.me/966578380442">💬</a>
+<script>
+document.getElementById('contactForm').addEventListener('submit',function(e){
+e.preventDefault();
+var name=document.getElementById('name').value;
+var phone=document.getElementById('phone').value;
+var msg=document.getElementById('message').value;
+if(name&&phone&&msg){
+window.open('https://wa.me/966578380442?text='+encodeURIComponent('الاسم: '+name+'\nالجوال: '+phone+'\nالطلب: '+msg),'_blank');
+}
+});
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+a.addEventListener('click',function(e){
+e.preventDefault();
+document.querySelector(this.getAttribute('href')).scrollIntoView({behavior:'smooth'});
+});
+});
+</script>
 </body>
 </html>
