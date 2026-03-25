@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://maheron-design.github.io/maheron-website/sitemap.xml
