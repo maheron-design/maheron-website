@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     
-    <!-- SEO Meta Tags -->
     <title>ماهرول | أفضل شركة استيكرات ثلجية وتضليل واجهات زجاج بالرياض</title>
     <meta name="description" content="أفضل شركة استيكرات ثلجية وتضليل واجهات الزجاج بالرياض - ماهرول. نقدم تركيب استيكر ثلجي، استيكرات شفافة، عاكسة، ملونة، وتضليل زجاج للمنازل والمكاتب والمحلات. اتصل الآن 966578380442">
     <meta name="keywords" content="استيكر ثلجي الرياض, استيكرات ثلجية, تضليل واجهات زجاج, ماهرول الرياض">
@@ -16,7 +15,6 @@
     <meta property="og:title" content="ماهرول | أفضل شركة استيكرات ثلجية وتضليل واجهات زجاج بالرياض">
     <meta property="og:description" content="خدمات تركيب استيكر ثلجي، استيكرات شفافة، عاكسة، وتضليل الزجاج في جميع أحياء الرياض.">
     
-    <!-- Font Awesome & Google Fonts -->
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -26,7 +24,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Cairo', sans-serif; background-color: #f8fafc; color: #1e293b; line-height: 1.6; }
         .container { width: 90%; max-width: 1280px; margin: 0 auto; }
-        header { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white; padding: 1rem 0; position: sticky; top: 0; z-index: 1000; }
+        header { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white; padding: 1rem 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
         .header-flex { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
         .logo h1 { font-size: 1.8rem; font-weight: 800; }
         .logo p { font-size: 0.8rem; color: #facc15; }
@@ -108,6 +106,7 @@
     </div>
 </section>
 
+<!-- قسم الخدمات - 7 خدمات كاملة -->
 <section id="services">
     <div class="container">
         <h2 class="section-title">خدمات الاستيكرات الثلجية وتضليل الزجاج في الرياض</h2>
@@ -123,6 +122,7 @@
     </div>
 </section>
 
+<!-- معرض الصور -->
 <section id="works">
     <div class="container">
         <h2 class="section-title">أعمالنا في تركيب الاستيكرات الثلجية وتضليل الزجاج</h2>
@@ -133,20 +133,20 @@
     </div>
 </section>
 
-<!-- نموذج طلب عرض السعر - مع ربط واتساب -->
+<!-- نموذج طلب عرض السعر مع ربط واتساب -->
 <section id="quote" class="quote-section">
     <div class="container">
         <h2 class="section-title">طلب عرض سعر للاستيكرات الثلجية والتضليل</h2>
         <div class="quote-form">
             <div class="form-group">
-                <input type="text" id="quoteName" placeholder="الاسم كاملاً *" />
+                <input type="text" id="quoteName" placeholder="الاسم كاملاً" />
             </div>
             <div class="form-group">
-                <input type="tel" id="quotePhone" placeholder="رقم الجوال (واتساب) *" />
+                <input type="tel" id="quotePhone" placeholder="رقم الجوال (واتساب)" />
             </div>
             <div class="form-group">
                 <select id="serviceType">
-                    <option value="">اختر الخدمة المطلوبة *</option>
+                    <option value="">اختر الخدمة المطلوبة</option>
                     <option value="استيكر ثلجي">استيكر ثلجي (متجمد)</option>
                     <option value="استيكرات شفافة">استيكرات شفافة</option>
                     <option value="تضليل واجهات">تضليل واجهات زجاج</option>
@@ -158,7 +158,7 @@
             </div>
             <div class="form-group">
                 <select id="area">
-                    <option value="">اختر الحي / المنطقة *</option>
+                    <option value="">اختر الحي / المنطقة</option>
                     <option value="الملقا">الملقا</option>
                     <option value="النخيل">النخيل</option>
                     <option value="الياسمين">الياسمين</option>
@@ -261,14 +261,12 @@
     const quoteBtn = document.getElementById('getQuoteBtn');
     if(quoteBtn) {
         quoteBtn.addEventListener('click', function() {
-            // جلب جميع البيانات
             const name = document.getElementById('quoteName').value.trim();
             const phone = document.getElementById('quotePhone').value.trim();
             const service = document.getElementById('serviceType').value;
             const area = document.getElementById('area').value;
             const details = document.getElementById('quoteDetails').value.trim();
 
-            // التحقق من الحقول المطلوبة
             if(!name) {
                 alert('❌ الرجاء إدخال الاسم');
                 document.getElementById('quoteName').focus();
@@ -290,7 +288,6 @@
                 return;
             }
 
-            // تنسيق رسالة واتساب
             const message = `🪟 *طلب جديد من موقع ماهرول* 🪟
 
 👤 *الاسم:* ${name}
@@ -301,20 +298,17 @@
 
 ⏰ تاريخ الإرسال: ${new Date().toLocaleString('ar-SA')}`;
 
-            // رابط واتساب
             const whatsappUrl = `https://wa.me/966578380442?text=${encodeURIComponent(message)}`;
             
-            // فتح الواتساب في نافذة جديدة
             window.open(whatsappUrl, '_blank');
             
-            // عرض رسالة تأكيد للمستخدم
             const resultDiv = document.getElementById('quoteResult');
             resultDiv.innerHTML = `✅ تم فتح واتساب، اضغط على إرسال لإتمام طلبك`;
             resultDiv.style.display = 'block';
         });
     }
 
-    // معرض الصور
+    // معرض الصور - 6 صور كاملة
     const workImages = [
         { src: "IMG-20260530-WA0025.jpg", title: "ماهرول - استيكر ثلجي وتضليل" },
         { src: "IMG-20260530-WA0026.jpg", title: "ماهرول - استيكر ثلجي وتضليل" },
@@ -333,4 +327,33 @@
             const item = document.createElement('div');
             item.className = 'gallery-item';
             item.innerHTML = `
-                <img src="${img.src}" alt="${img.title}" onerror="this.src='https://placehold.co/400x300/
+                <img src="${img.src}" alt="${img.title}" onerror="this.src='https://placehold.co/400x300/1e293b/white?text=صورة+قريباً'">
+                <p>${img.title}</p>
+            `;
+            item.onclick = () => {
+                lightboxImg.src = img.src;
+                lightbox.classList.add('show');
+            };
+            galleryGrid.appendChild(item);
+        });
+    }
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "ماهرول للاستيكرات الثلجية وتضليل الزجاج",
+    "telephone": "+966578380442",
+    "email": "info@maheron.sa",
+    "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "الرياض",
+        "addressCountry": "SA"
+    },
+    "url": "https://maheron-design.github.io/maheron-website/",
+    "priceRange": "$$"
+}
+</script>
+</body>
+</html>
