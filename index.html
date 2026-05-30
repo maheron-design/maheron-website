@@ -294,6 +294,19 @@
             text-decoration: none;
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
+        /* رسالة التنبيه في حالة عدم فتح الواتساب */
+        .fallback-message {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            padding: 10px;
+            border-radius: 10px;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        .fallback-message a {
+            color: #25d366;
+            font-weight: bold;
+        }
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -416,7 +429,6 @@
             </div>
             <button id="getQuoteBtn" class="btn" style="background:#0f172a; color:white; width:100%">إرسال الطلب</button>
             <div id="quoteResult" class="quote-result"></div>
-            <p style="font-size: 0.8rem; text-align:center; margin-top:1rem;">سيتم تحويلك إلى واتساب لإرسال الطلب</p>
         </div>
     </div>
 </section>
@@ -493,21 +505,11 @@
         }
     });
 
-    // إرسال الطلب إلى WhatsApp
-    function formatWhatsAppMessage(name, phone, service, area, details) {
-        return `🪟 *طلب جديد من موقع ماهرول* 🪟
+    // دالة إرسال الطلب إلى WhatsApp
+    function sendToWhatsApp() {
+        // جلب البيانات من الحقول
+        const name = document.getElementById('quoteName').value.trim();
+        const phone = document.getElementById('quotePhone').value.trim();
+        const service = document.getElementById('serviceType').value;
+        const area = document.getElementById('area').value;
         
-👤 *الاسم:* ${name}
-📱 *الجوال:* ${phone}
-🛠 *الخدمة:* ${service}
-📍 *المنطقة:* ${area}
-📝 *التفاصيل:* ${details || "لا توجد تفاصيل إضافية"}
-
-⏰ تاريخ الإرسال: ${new Date().toLocaleString('ar-SA')}`;
-    }
-
-    const quoteBtn = document.getElementById('getQuoteBtn');
-    if(quoteBtn) {
-        quoteBtn.addEventListener('click', function() {
-            const name = document.getElementById('quoteName').value.trim();
-            const phone = document.getElementById('quotePhone').value.t
