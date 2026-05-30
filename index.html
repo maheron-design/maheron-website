@@ -406,6 +406,8 @@
                     <option value="النسيم">النسيم</option>
                     <option value="الروضة">الروضة</option>
                     <option value="السليمانية">السليمانية</option>
+                    <option value="الخرج">الخرج</option>
+                    <option value="الدرعية">الدرعية</option>
                     <option value="أخرى">أخرى</option>
                 </select>
             </div>
@@ -414,7 +416,7 @@
             </div>
             <button id="getQuoteBtn" class="btn" style="background:#0f172a; color:white; width:100%">إرسال الطلب</button>
             <div id="quoteResult" class="quote-result"></div>
-            <p style="font-size: 0.8rem; text-align:center; margin-top:1rem;">سيتم التواصل معك خلال 30 دقيقة لتأكيد التفاصيل وتقديم عرض السعر المناسب</p>
+            <p style="font-size: 0.8rem; text-align:center; margin-top:1rem;">سيتم تحويلك إلى واتساب لإرسال الطلب</p>
         </div>
     </div>
 </section>
@@ -438,7 +440,7 @@
         <div class="faq-item"><div class="faq-question">ما هي فوائد تركيب استيكرات التضليل للزجاج؟ <i class="fas fa-chevron-down"></i></div><div class="faq-answer">عزل حراري ممتاز، حماية من الأشعة فوق البنفسجية، خصوصية، وتقليل استهلاك الكهرباء.</div></div>
         <div class="faq-item"><div class="faq-question">كم تكلفة تركيب الاستيكر الثلجي؟ <i class="fas fa-chevron-down"></i></div><div class="faq-answer">تختلف الأسعار حسب المساحة، اتصل بنا للحصول على عرض سعر دقيق ومجاني.</div></div>
         <div class="faq-item"><div class="faq-question">هل تغطون جميع أحياء الرياض؟ <i class="fas fa-chevron-down"></i></div><div class="faq-answer">نعم، نعمل في جميع الأحياء مثل الملقا، النخيل، الياسمين، النسيم، الروضة، السليمانية، والخرج والدرعية.</div></div>
-        <div class="faq-item"><div class="faq-question">كم يستغرق تركيب الاستيكرات؟ <i class="fas fa-chevron-down"></i></div><div class="faq-answer"> حسب مساحة الزجاج، .</div></div>
+        <div class="faq-item"><div class="faq-question">كم يستغرق تركيب الاستيكرات؟ <i class="fas fa-chevron-down"></i></div><div class="faq-answer">من 3 إلى 8 ساعات حسب مساحة الزجاج، ونوفر سرعة قياسية للاستبدال.</div></div>
     </div>
 </section>
 
@@ -465,6 +467,7 @@
 <a href="https://wa.me/966578380442?text=مرحباً، أحتاج لعرض سعر للاستيكرات الثلجية وتضليل الزجاج" class="whatsapp-float"><i class="fab fa-whatsapp"></i> استشارة سريعة</a>
 
 <script>
+    // القائمة المتنقلة
     const mobileBtn = document.getElementById('mobileMenuBtn');
     const navLinksMenu = document.getElementById('navLinks');
     if(mobileBtn) {
@@ -473,6 +476,7 @@
         });
     }
 
+    // الأسئلة الشائعة
     const faqItems = document.querySelectorAll('.faq-item');
     faqItems.forEach(item => {
         const questionDiv = item.querySelector('.faq-question');
@@ -489,80 +493,21 @@
         }
     });
 
+    // إرسال الطلب إلى WhatsApp
+    function formatWhatsAppMessage(name, phone, service, area, details) {
+        return `🪟 *طلب جديد من موقع ماهرول* 🪟
+        
+👤 *الاسم:* ${name}
+📱 *الجوال:* ${phone}
+🛠 *الخدمة:* ${service}
+📍 *المنطقة:* ${area}
+📝 *التفاصيل:* ${details || "لا توجد تفاصيل إضافية"}
+
+⏰ تاريخ الإرسال: ${new Date().toLocaleString('ar-SA')}`;
+    }
+
     const quoteBtn = document.getElementById('getQuoteBtn');
     if(quoteBtn) {
         quoteBtn.addEventListener('click', function() {
-            const service = document.getElementById('serviceType').value;
-            const area = document.getElementById('area').value;
-            const name = document.getElementById('quoteName').value;
-            const phone = document.getElementById('quotePhone').value;
-
-            if(!service || !area) {
-                alert('الرجاء اختيار الخدمة والمنطقة');
-                return;
-            }
-
-            if(!name || !phone) {
-                alert('الرجاء إدخال الاسم ورقم الجوال للتواصل معك');
-                return;
-            }
-
-            const resultDiv = document.getElementById('quoteResult');
-            resultDiv.innerHTML = `✅ تم استلام طلبك بنجاح، سنتواصل معك عبر واتساب خلال 30 دقيقة لتقديم عرض السعر المناسب. شكراً لثقتك بماهرول.`;
-            resultDiv.style.display = 'block';
-            
-            // مسح الحقول بعد الإرسال
-            document.getElementById('serviceType').value = '';
-            document.getElementById('area').value = '';
-            document.getElementById('quoteDetails').value = '';
-        });
-    }
-
-    const workImages = [
-        { src: "IMG-20260530-WA0025.jpg", title: "ماهرول - استيكر ثلجي وتضليل" },
-        { src: "IMG-20260530-WA0026.jpg", title: "ماهرول - استيكر ثلجي وتضليل" },
-        { src: "IMG-20260530-WA0027.jpg", title: "ماهرول - استيكر ثلجي وتضليل" },
-        { src: "IMG-20260530-WA0028.jpg", title: "ماهرول - استيكر ثلجي وتضليل" },
-        { src: "IMG-20260530-WA0029.jpg", title: "ماهرول - استيكر ثلجي وتضليل" },
-        { src: "IMG-20260530-WA0030.jpg", title: "ماهرول - استيكر ثلجي وتضليل" }
-    ];
-
-    const galleryGrid = document.getElementById('galleryGrid');
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightboxImg');
-
-    if(galleryGrid) {
-        workImages.forEach(img => {
-            const item = document.createElement('div');
-            item.className = 'gallery-item';
-            item.innerHTML = `
-                <img src="${img.src}" alt="${img.title}" onerror="this.src='https://placehold.co/400x300/1e293b/white?text=صورة+قريباً'">
-                <p>${img.title}</p>
-            `;
-            item.onclick = () => {
-                lightboxImg.src = img.src;
-                lightbox.classList.add('show');
-            };
-            galleryGrid.appendChild(item);
-        });
-    }
-</script>
-
-<script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "ماهرول للاستيكرات الثلجية وتضليل الزجاج",
-    "telephone": "+966578380442",
-    "email": "info@maheron.sa",
-    "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "الرياض",
-        "addressCountry": "SA"
-    },
-    "url": "https://maheron-design.github.io/maheron-website/",
-    "priceRange": "$$"
-}
-</script>
-</body>
-</html>
+            const name = document.getElementById('quoteName').value.trim();
+            const phone = document.getElementById('quotePhone').value.t
