@@ -10,24 +10,13 @@
     <meta name="keywords" content="زجاج سيكوريت الرياض, تركيب زجاج بالرياض, شركة زجاج سيكوريت, تفصيل زجاج, شاور بوكس الرياض, واجهات زجاجية, درابزين زجاج, ابواب زجاج سيكوريت">
     <meta name="author" content="ماهرون للزجاج السيكوريت">
     <meta name="robots" content="index, follow">
-    <meta name="geo.region" content="SA-RI">
-    <meta name="geo.placename" content="الرياض">
-    <meta name="language" content="Arabic">
+    <meta name="google-site-verification" content="a4eba5603b.html" />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://maheron-design.github.io/maheron-website/">
     <meta property="og:title" content="ماهرون | أفضل شركة تركيب زجاج سيكوريت بالرياض">
     <meta property="og:description" content="خدمات تركيب وتفصيل وتوريد الزجاج السيكوريت في جميع أحياء الرياض. جودة عالية وأسعار تنافسية.">
-    <meta property="og:image" content="https://placehold.co/1200x630/0f172a/facc15?text=ماهرون+للزجاج">
-    
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="ماهرون | أفضل شركة تركيب زجاج سيكوريت بالرياض">
-    <meta name="twitter:description" content="خدمات تركيب وتفصيل وتوريد الزجاج السيكوريت بالرياض">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://maheron-design.github.io/maheron-website/">
     
     <!-- Font Awesome & Google Fonts -->
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
@@ -52,7 +41,6 @@
             max-width: 1280px;
             margin: 0 auto;
         }
-        /* Header */
         header {
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             color: white;
@@ -71,7 +59,6 @@
         .logo h1 {
             font-size: 1.8rem;
             font-weight: 800;
-            letter-spacing: -0.5px;
         }
         .logo p {
             font-size: 0.8rem;
@@ -96,9 +83,8 @@
             font-size: 1.8rem;
             cursor: pointer;
         }
-        /* Hero */
         .hero {
-            background: linear-gradient(rgba(15,23,42,0.85), rgba(15,23,42,0.85)), url('https://placehold.co/1920x800/1e293b/white?text=زجاج+سيكوريت+فاخر');
+            background: linear-gradient(rgba(15,23,42,0.85), rgba(15,23,42,0.85));
             background-size: cover;
             background-position: center;
             padding: 5rem 0;
@@ -138,7 +124,6 @@
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
-        /* Sections */
         section {
             padding: 4rem 0;
         }
@@ -157,12 +142,12 @@
             margin: 0.8rem auto 0;
             border-radius: 4px;
         }
-        .services-grid, .why-grid, .works-grid {
+        .services-grid, .why-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
         }
-        .service-card, .why-card, .work-item {
+        .service-card, .why-card {
             background: white;
             padding: 2rem;
             border-radius: 20px;
@@ -170,20 +155,65 @@
             transition: 0.3s;
             text-align: center;
         }
-        .service-card:hover, .why-card:hover, .work-item:hover {
+        .service-card:hover, .why-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 30px -10px rgba(0,0,0,0.1);
         }
         .service-card i, .why-card i {
             font-size: 2.8rem;
             color: #facc15;
             margin-bottom: 1rem;
         }
-        .service-card h3, .why-card h3 {
-            margin-bottom: 1rem;
+        /* معرض الصور */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .gallery-item {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+        .gallery-item:hover {
+            transform: translateY(-8px);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+        .gallery-item p {
+            padding: 1rem;
+            text-align: center;
+            font-weight: 600;
             color: #0f172a;
         }
-        /* Quote form */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 9999;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+        }
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+        }
+        .lightbox.show {
+            display: flex;
+        }
         .quote-section {
             background: #f1f5f9;
             border-radius: 30px;
@@ -195,7 +225,6 @@
             background: white;
             padding: 2rem;
             border-radius: 30px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
         }
         .form-group {
             margin-bottom: 1.2rem;
@@ -217,13 +246,11 @@
             font-weight: bold;
             display: none;
         }
-        /* FAQ */
         .faq-item {
             background: white;
             margin-bottom: 1rem;
             border-radius: 20px;
             padding: 1.2rem;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
         .faq-question {
             font-weight: 700;
@@ -238,7 +265,6 @@
             margin-top: 0.5rem;
             color: #334155;
         }
-        /* Footer */
         footer {
             background: #0f172a;
             color: #cbd5e1;
@@ -340,7 +366,16 @@
     </div>
 </section>
 
-<!-- عروض الأسعار الفورية -->
+<section id="works">
+    <div class="container">
+        <h2 class="section-title">أعمالنا في تركيب الزجاج السيكوريت</h2>
+        <div class="gallery-grid" id="galleryGrid"></div>
+        <div id="lightbox" class="lightbox" onclick="this.classList.remove('show')">
+            <img id="lightboxImg" src="">
+        </div>
+    </div>
+</section>
+
 <section id="quote" class="quote-section">
     <div class="container">
         <h2 class="section-title">احصل على عرض سعر فوري لتركيب الزجاج</h2>
@@ -379,17 +414,6 @@
             <button id="getQuoteBtn" class="btn" style="background:#0f172a; color:white; width:100%">احسب السعر التقديري</button>
             <div id="quoteResult" class="quote-result"></div>
             <p style="font-size: 0.8rem; text-align:center; margin-top:1rem;">سعر تقديري حسب البيانات المدخلة، سيتم التواصل معك خلال 30 دقيقة لتأكيد السعر الدقيق</p>
-        </div>
-    </div>
-</section>
-
-<section id="works">
-    <div class="container">
-        <h2 class="section-title">أعمالنا في تركيب الزجاج السيكوريت</h2>
-        <div class="works-grid">
-            <div class="work-item"><img src="https://placehold.co/400x300/1e293b/white?text=واجهات+زجاجية" style="width:100%; border-radius:16px;" alt="تركيب واجهات زجاجية بالرياض"><h3>واجهات زجاجية</h3><p>لمحلات ومباني تجارية</p></div>
-            <div class="work-item"><img src="https://placehold.co/400x300/1e293b/white?text=شاور+بوكس" style="width:100%; border-radius:16px;" alt="تركيب شاور بوكس زجاج بالرياض"><h3>شاور بوكس فاخر</h3><p>تصاميم عصرية لحمامات راقية</p></div>
-            <div class="work-item"><img src="https://placehold.co/400x300/1e293b/white?text=درابزين+زجاج" style="width:100%; border-radius:16px;" alt="تركيب درابزين زجاج سيكوريت بالرياض"><h3>درابزين زجاج سيكوريت</h3><p>أمان وجمال للسلالم والشرفات</p></div>
         </div>
     </div>
 </section>
@@ -440,89 +464,108 @@
 <a href="https://wa.me/966578380442?text=مرحباً، أحتاج لعرض سعر فوري لتركيب زجاج سيكوريت" class="whatsapp-float"><i class="fab fa-whatsapp"></i> استشارة سريعة</a>
 
 <script>
-    // Mobile menu toggle
+    // القائمة المتنقلة
     const mobileBtn = document.getElementById('mobileMenuBtn');
-    const navLinks = document.getElementById('navLinks');
-    mobileBtn.addEventListener('click', () => {
-        navLinks.classList.toggle('show');
-    });
+    const navLinksMenu = document.getElementById('navLinks');
+    if(mobileBtn) {
+        mobileBtn.addEventListener('click', () => {
+            navLinksMenu.classList.toggle('show');
+        });
+    }
 
-    // FAQ toggles
+    // الأسئلة الشائعة
     const faqItems = document.querySelectorAll('.faq-item');
     faqItems.forEach(item => {
         const questionDiv = item.querySelector('.faq-question');
         const answer = item.querySelector('.faq-answer');
-        questionDiv.addEventListener('click', () => {
-            const isOpen = answer.style.maxHeight;
-            if(isOpen) {
-                answer.style.maxHeight = null;
-            } else {
-                answer.style.maxHeight = answer.scrollHeight + "px";
+        if(questionDiv) {
+            questionDiv.addEventListener('click', () => {
+                const isOpen = answer.style.maxHeight;
+                if(isOpen) {
+                    answer.style.maxHeight = null;
+                } else {
+                    answer.style.maxHeight = answer.scrollHeight + "px";
+                }
+            });
+        }
+    });
+
+    // عرض السعر
+    const quoteBtn = document.getElementById('getQuoteBtn');
+    if(quoteBtn) {
+        quoteBtn.addEventListener('click', function() {
+            const service = document.getElementById('serviceType').value;
+            const area = document.getElementById('area').value;
+            const name = document.getElementById('quoteName').value;
+            const phone = document.getElementById('quotePhone').value;
+
+            if(!service || !area) {
+                alert('الرجاء اختيار الخدمة والمنطقة للحصول على عرض سعر');
+                return;
             }
+
+            let basePrice = 0;
+            switch(service) {
+                case 'تركيب واجهات زجاجية': basePrice = 1800; break;
+                case 'تفصيل شاور بوكس': basePrice = 1200; break;
+                case 'درابزين زجاج': basePrice = 1500; break;
+                case 'أبواب زجاج سحاب': basePrice = 2000; break;
+                case 'صيانة واستبدال': basePrice = 600; break;
+                default: basePrice = 1000;
+            }
+
+            const resultDiv = document.getElementById('quoteResult');
+            resultDiv.innerHTML = `عرض سعر تقديري للخدمة (${service}) في ${area}: يبدأ من <span style="color:#0f172a; font-size:1.4rem;">${basePrice} ريال سعودي</span><br>سيتم التواصل معكم خلال 30 دقيقة عبر واتساب لتأكيد التفاصيل.`;
+            resultDiv.style.display = 'block';
         });
-    });
+    }
 
-    // عرض سعر فوري
-    document.getElementById('getQuoteBtn').addEventListener('click', function() {
-        const service = document.getElementById('serviceType').value;
-        const area = document.getElementById('area').value;
-        const name = document.getElementById('quoteName').value;
-        const phone = document.getElementById('quotePhone').value;
+    // معرض الصور - الأسماء التي رفعتها
+    const workImages = [
+        { src: "IMG-20260530-WA0025.jpg", title: "عمل ماهرون - تركيب زجاج سيكوريت" },
+        { src: "IMG-20260530-WA0026.jpg", title: "عمل ماهرون - تركيب زجاج سيكوريت" },
+        { src: "IMG-20260530-WA0027.jpg", title: "عمل ماهرون - تركيب زجاج سيكوريت" },
+        { src: "IMG-20260530-WA0028.jpg", title: "عمل ماهرون - تركيب زجاج سيكوريت" },
+        { src: "IMG-20260530-WA0029.jpg", title: "عمل ماهرون - تركيب زجاج سيكوريت" },
+        { src: "IMG-20260530-WA0030.jpg", title: "عمل ماهرون - تركيب زجاج سيكوريت" }
+    ];
 
-        if(!service || !area) {
-            alert('الرجاء اختيار الخدمة والمنطقة للحصول على عرض سعر');
-            return;
-        }
+    const galleryGrid = document.getElementById('galleryGrid');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
 
-        let basePrice = 0;
-        switch(service) {
-            case 'تركيب واجهات زجاجية': basePrice = 1800; break;
-            case 'تفصيل شاور بوكس': basePrice = 1200; break;
-            case 'درابزين زجاج': basePrice = 1500; break;
-            case 'أبواب زجاج سحاب': basePrice = 2000; break;
-            case 'صيانة واستبدال': basePrice = 600; break;
-            default: basePrice = 1000;
-        }
-        const farZones = ['الخرج', 'الدرعية'];
-        if(farZones.includes(area)) basePrice += 200;
-
-        const resultDiv = document.getElementById('quoteResult');
-        resultDiv.innerHTML = `عرض سعر تقديري للخدمة (${service}) في ${area}: يبدأ من <span style="color:#0f172a; font-size:1.4rem;">${basePrice} ريال سعودي</span><br>سيتم التواصل معكم خلال 30 دقيقة عبر واتساب لتأكيد التفاصيل.`;
-        resultDiv.style.display = 'block';
-        
-        if(name && phone) {
-            console.log(`طلب عرض سعر من: ${name}, هاتف: ${phone}`);
-        }
-    });
+    if(galleryGrid) {
+        workImages.forEach(img => {
+            const item = document.createElement('div');
+            item.className = 'gallery-item';
+            item.innerHTML = `
+                <img src="${img.src}" alt="${img.title}" onerror="this.src='https://placehold.co/400x300/1e293b/white?text=صورة+قريباً'">
+                <p>${img.title}</p>
+            `;
+            item.onclick = () => {
+                lightboxImg.src = img.src;
+                lightbox.classList.add('show');
+            };
+            galleryGrid.appendChild(item);
+        });
+    }
 </script>
 
-<!-- Schema Markup للبيانات المنظمة -->
+<!-- Schema Markup -->
 <script type="application/ld+json">
 {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "ماهرون للزجاج السيكوريت",
-    "image": "https://placehold.co/400x300/0f172a/facc15?text=ماهرون",
     "telephone": "+966578380442",
     "email": "info@maheron.sa",
     "address": {
         "@type": "PostalAddress",
         "addressLocality": "الرياض",
-        "addressRegion": "الرياض",
         "addressCountry": "SA"
     },
-    "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 24.7136,
-        "longitude": 46.6753
-    },
     "url": "https://maheron-design.github.io/maheron-website/",
-    "priceRange": "$$",
-    "openingHours": "Mo-Su 00:00-23:59",
-    "description": "أفضل شركة تركيب زجاج سيكوريت بالرياض، نقدم خدمات التركيب والتفصيل والتوريد والصيانة بجودة عالية",
-    "sameAs": [
-        "https://wa.me/966578380442"
-    ]
+    "priceRange": "$$"
 }
 </script>
 </body>
