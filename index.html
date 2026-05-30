@@ -294,19 +294,6 @@
             text-decoration: none;
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
-        /* رسالة التنبيه في حالة عدم فتح الواتساب */
-        .fallback-message {
-            background: #fff3cd;
-            border: 1px solid #ffc107;
-            padding: 10px;
-            border-radius: 10px;
-            margin-top: 10px;
-            font-size: 0.9rem;
-        }
-        .fallback-message a {
-            color: #25d366;
-            font-weight: bold;
-        }
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -505,6 +492,9 @@
         }
     });
 
+    // الرقم الموحد (نفس الرقم الموجود في زر استشارة سريعة)
+    const WHATSAPP_NUMBER = '966578380442';
+
     // دالة إرسال الطلب إلى WhatsApp
     function sendToWhatsApp() {
         // جلب البيانات من الحقول
@@ -512,4 +502,12 @@
         const phone = document.getElementById('quotePhone').value.trim();
         const service = document.getElementById('serviceType').value;
         const area = document.getElementById('area').value;
-        
+        const details = document.getElementById('quoteDetails').value.trim();
+
+        // التحقق من صحة البيانات
+        if(!name) {
+            alert('❌ الرجاء إدخال الاسم');
+            document.getElementById('quoteName').focus();
+            return false;
+        }
+        if(!phon
